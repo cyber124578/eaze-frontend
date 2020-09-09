@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
+/*general*/
+:root{
+    --main-text-color:#DE2A5B;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Comfortaa', cursive;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+p{
+    color: #000;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+/*general ends*/
+
+/*upper section*/
+#upper {
+    background-image: url('img/main.jpg');
+    background-size: cover;
+    background-position:center ;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+#upper::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .6;
+    z-index: -1;
+}
+#upper .banner {
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+#upper h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text-reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#upper h1:nth-child(1){
+    animation-delay: 1s;
+    
+}
+#upper h1:nth-child(2){
+    animation: text-reveal-name 1s ease forwards;
+
+    animation-delay: 2s;
+}
+#upper h1:nth-child(3){
+    animation-delay: 3s;
+}
+#upper span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: crimson;
+    animation: textbox-reveal 1s ease ;
+    animation-delay: 0.3s;
+    
+}
+#upper h1:nth-child(1) span{
+    animation-delay: 0.5s;
+}
+#upper h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#upper h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#upper .cta {
+    display: inline-block;
+    padding: 10px 30px ;
+    color:crimson;
+    background-color: transparent;
+    border:2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1;
+    transition: .3s ease ;
+    transition-property: background-color,color;
+
+}
+#upper .cta:hover{
+    color: white;
+    background-color: crimson;
+    border:1px solid white;
+}
+/*upper section end*/
+/*features*/
+
+#features{}
+#features .feature {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#features .section-title{
+    font-size: 4rem;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+
+}
+#features .section-title span {
+    color: var(--main-text-color);
+}
+#features .feature-top {
+    margin-bottom: 5rem;
+}
+
+
+
+/*features end*/
+
+/*keyframes*/
+
+@keyframes textbox-reveal {
+    50%{
+        left: 0;
+        width: 100%;
+    }
+    100%{
+left: 100%;
+width: 0;
+    }
+}
+@keyframes text-reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text-reveal-name {
+    100%{
+        color: crimson;
+        font-weight: 700;
+    }
+}
+/*keyframes ends*/
+
+
